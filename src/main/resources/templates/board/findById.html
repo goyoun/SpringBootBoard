@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+
+<h2> findById.html </h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">번호</th>
+        <th scope="col">작성자</th>
+        <th scope="col">제목</th>
+        <th scope="col">작성내용</th>
+        <th scope="col">작성시간</th>
+        <th scope="col">수정</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+<!--        수정기능, 수정화면(update.html)에서 비밀번호를 입력받고 일치하면 수정처리 일치하지 않으면 수정X
+            수정처리도 post방식(폼에서 바로 요청하는)
+                     put방식 (ajax를 이용하여 요청하는) 두가지로 모두 해보기
+                     수정이 완료되면 수정후 상세페이지를 출력 -->
+        <td th:text="${board.boardId}">번호</td>
+        <td th:text="${board.boardTitle}">작성자</td>
+        <td th:text="${board.boardTitle}">제목</td>
+        <td th:text="${board.boardContents}">작성내용</td>
+        <td th:text="${board.boardDate}">작성시간</td>
+        <td><a th:href="@{|/board/update/${board.boardId}|}"> 수정 </a></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
